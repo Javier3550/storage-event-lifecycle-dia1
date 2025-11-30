@@ -27,22 +27,27 @@ Toda la documentación ilustrada se encuentra en:
 # 2. Estructura del Proyecto
 
 gcp-storage-project/
+
 │── index.js
+
 │── package.json
+
 │── package-lock.json
+
 │── tests/
+
 │ └── onFileUpload.test.js
+
 │── ConfiguracionAvanzadaInfraestructuraGCP_DIA1.pdf
+
 │── README.md
 
-php
-Copy code
 
 ---
 
 # 3. Cloud Function (Código)
 
-```javascript
+
 exports.onFileUpload = async (event, context) => {
   try {
     const file = event;
@@ -69,8 +74,8 @@ exports.onFileUpload = async (event, context) => {
   }
 };
 4. Despliegue de la Cloud Function
-bash
-Copy code
+
+
 gcloud functions deploy onFileUpload \
   --gen2 \
   --runtime=nodejs20 \
@@ -81,8 +86,7 @@ gcloud functions deploy onFileUpload \
 5. Pruebas Unitarias (Jest)
 Archivo de prueba:
 
-javascript
-Copy code
+
 const { onFileUpload } = require("../index");
 
 describe("Cloud Function onFileUpload", () => {
@@ -105,8 +109,7 @@ describe("Cloud Function onFileUpload", () => {
 });
 Resultado esperado:
 
-yaml
-Copy code
+
 Test Suites: 1 passed
 Tests:       2 passed
 
